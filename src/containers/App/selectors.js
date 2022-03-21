@@ -7,7 +7,7 @@ const makeSelectGlobal = () => createSelector(selectGlobal, state => state);
 
 const makeSelectTurn = () => createSelector(selectGlobal, state => state.turn);
 
-const makeSelectIsShowCountDown = () =>
-  createSelector(selectGlobal, state => state.isShowCountdown);
+const makeSelectIsShowShopping = () =>
+  createSelector(selectGlobal, state => state.isShowShopping);
 
-export { makeSelectGlobal, makeSelectTurn, makeSelectIsShowCountDown };
+export { makeSelectGlobal, makeSelectTurn, makeSelectIsShowShopping };

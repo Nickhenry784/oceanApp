@@ -3,7 +3,7 @@ import {
   REQUEST_DATA,
   INCREMENT_TURN,
   DECREMENT_TURN,
-  SET_SHOW_COUNTDOWN,
+  SET_SHOW_SHOPPING,
 } from './constants';
 
 export const setTurn = turn => ({
@@ -25,7 +25,7 @@ export const requestData = () => ({
   type: REQUEST_DATA,
 });
 
-export const setShowCountDown = isShowCountdown => ({
-  type: SET_SHOW_COUNTDOWN,
-  isShowCountdown,
+export const setShowShopping = isShowShopping => ({
+  type: SET_SHOW_SHOPPING,
+  isShowShopping,
 });

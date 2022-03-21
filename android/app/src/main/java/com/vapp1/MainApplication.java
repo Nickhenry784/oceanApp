@@ -1,4 +1,4 @@
-package com.sunshine;
+package com.rmembersetgamepad;
 
 import android.app.Application;
 import android.content.Context;

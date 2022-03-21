@@ -5,12 +5,12 @@ import {
   SET_TURN,
   INCREMENT_TURN,
   DECREMENT_TURN,
-  SET_SHOW_COUNTDOWN,
+  SET_SHOW_SHOPPING,
 } from '../constants';
 
 export const initialState = {
-  turn: 5,
-  isShowCountdown: false,
+  turn: 10,
+  isShowShopping: false,
   backgroundType: 'default',
 };
 
@@ -18,8 +18,8 @@ export default (state = initialState, action) =>
   produce(state, draft => {
     // eslint-disable-next-line default-case
     switch (action.type) {
-      case SET_SHOW_COUNTDOWN:
-        draft.isShowCountdown = action.isShowCountdown;
+      case SET_SHOW_SHOPPING:
+        draft.isShowShopping = action.isShowShopping;
         break;
 
       case SET_TURN:

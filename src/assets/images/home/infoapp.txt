@@ -1,0 +1,17 @@
+Name app: Remember setting gamepad app
+Apkname: com.rmembersetgamepad
+
+cách làm
+làm như mau.png, các ô trắng là input text, lúc ng dùng bấm save thì khoá các input text lại k cho
+điền
+lúc bấm reset thì có thể điền dc
+
+cứ mỗi lần bấm save thì trừ 1 lượt
+
+Uses mặc định cho 10 Uses
+Heets thì hiện nút mua
+Uses : 50,100,150,200
+Price: 0.99,1.99,4.99,9.99
+
+Sub: 300,600
+Price: 10$/week, 20$/tháng

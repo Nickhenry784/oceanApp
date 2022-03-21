@@ -1,4 +1,4 @@
-package com.sunshine;
+package com.rmembersetgamepad;
 
 import com.facebook.react.ReactActivity;
 

@@ -1,54 +1,42 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Text, Image, TouchableOpacity } from 'react-native';
-import { images } from 'assets/images';
+import { Text, View, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { useInjectReducer, useInjectSaga } from 'redux-injectors';
-import { makeSelectIsShowCountDown, makeSelectTurn } from './selectors';
+import { makeSelectIsShowShopping, makeSelectTurn } from './selectors';
 import { appStyle } from './style';
 import saga from './saga';
 import reducer from './reducer';
 import Layout from './Layout';
-import { setShowCountDown } from './actions';
 import Buttons from './Buttons';
-import Countdown from './Countdown';
+import Gamepad from './GamePad';
+import { setShowShopping } from './actions';
 
 const key = 'App';
 
-function App({ dispatch, turn, isShowCountDown }) {
+function App({ dispatch, turn, isShowShopping }) {
   useInjectSaga({ key, saga });
   useInjectReducer({ key, reducer });
-  const [isShowShopping, setShowShopping] = useState(false);
 
-  const onSetShopping = () => {
-    setShowShopping(!isShowShopping);
-    dispatch(setShowCountDown(false));
-  };
-
-  const onSetCountDown = () => {
-    dispatch(setShowCountDown(false));
+  const onSetShowShopping = () => {
+    dispatch(setShowShopping(false));
   };
 
   return (
     <Layout turn={turn}>
-      {!isShowCountDown ? (
-        <Text style={appStyle.turn}>{`Turn: ${turn}`}</Text>
-      ) : (
+      {isShowShopping ? (
         <TouchableOpacity
-          onPress={onSetCountDown}
-          onLongPress={onSetCountDown}
-          style={appStyle.turn}>
+          onPress={onSetShowShopping}
+          onLongPress={onSetShowShopping}>
           <Text style={appStyle.turn}>Back</Text>
         </TouchableOpacity>
+      ) : (
+        <Text style={appStyle.turn}>{`Uses: ${turn}`}</Text>
       )}
-      <TouchableOpacity
-        onPress={onSetShopping}
-        onLongPress={onSetShopping}
-        style={appStyle.shoppingButton}>
-        <Image source={images.home.shopping} style={appStyle.shoppingImage} />
-      </TouchableOpacity>
-      {isShowShopping ? <Buttons /> : <Countdown />}
+      <View style={appStyle.viewCenter}>
+        {isShowShopping ? <Buttons /> : <Gamepad />}
+      </View>
     </Layout>
   );
 }
@@ -56,12 +44,12 @@ function App({ dispatch, turn, isShowCountDown }) {
 App.propTypes = {
   dispatch: PropTypes.func,
   turn: PropTypes.number,
-  isShowCountDown: PropTypes.bool,
+  isShowShopping: PropTypes.bool,
 };
 
 const mapStateToProps = createStructuredSelector({
   turn: makeSelectTurn(),
-  isShowCountDown: makeSelectIsShowCountDown(),
+  isShowShopping: makeSelectIsShowShopping(),
 });
 
 export default connect(mapStateToProps)(App);
