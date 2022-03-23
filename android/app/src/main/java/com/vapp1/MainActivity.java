@@ -1,4 +1,4 @@
-package com.rmembersetgamepad;
+package com.oceanfishsimuappz;
 
 import com.facebook.react.ReactActivity;
 

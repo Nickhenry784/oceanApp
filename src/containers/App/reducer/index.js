@@ -6,12 +6,14 @@ import {
   INCREMENT_TURN,
   DECREMENT_TURN,
   SET_SHOW_SHOPPING,
+  SET_PLAY_STATE,
 } from '../constants';
 
 export const initialState = {
-  turn: 10,
+  turn: 100,
   isShowShopping: false,
   backgroundType: 'default',
+  isPlayState: false,
 };
 
 export default (state = initialState, action) =>
@@ -25,6 +27,10 @@ export default (state = initialState, action) =>
       case SET_TURN:
         AsyncStorage.setItem('@turn', JSON.stringify(action.turn));
         draft.turn = action.turn;
+        break;
+
+      case SET_PLAY_STATE:
+        draft.isPlayState = action.isPlayState;
         break;
 
       case INCREMENT_TURN:

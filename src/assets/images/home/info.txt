@@ -1,0 +1,16 @@
+Name app: Ocean Fish Simulator App
+Apkname: com.oceanfishsimuappz
+
+cách làm, làm giao diện như hình mau.png
+Ng dung click vao vị trí nào ở màn hình thì hiện random 1 trong số 11 con cá (f1->f11)
+cá hiện lên di chuyển random 1 lúc r biến mất
+cứ cá hiện thì mất 1 điểm năng lượng (soul)
+mặc định có 100 soul
+
+click vào nút buy ở bên phải dẻ mua thêm soul
+
+Soul : 50,100,150,200
+Price: 0.99,1.99,4.99,9.99
+
+Sub:200,500
+Price: 10$/week, 20$/tháng

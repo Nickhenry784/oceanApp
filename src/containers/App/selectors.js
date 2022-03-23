@@ -10,4 +10,12 @@ const makeSelectTurn = () => createSelector(selectGlobal, state => state.turn);
 const makeSelectIsShowShopping = () =>
   createSelector(selectGlobal, state => state.isShowShopping);
 
-export { makeSelectGlobal, makeSelectTurn, makeSelectIsShowShopping };
+const makeSelectIsPlayState = () =>
+  createSelector(selectGlobal, state => state.isPlayState);
+
+export {
+  makeSelectGlobal,
+  makeSelectTurn,
+  makeSelectIsShowShopping,
+  makeSelectIsPlayState,
+};
